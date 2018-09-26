@@ -21,5 +21,5 @@ if [ ! -d "$ANDROID_NDK_HOME" ]; then
     popd
 fi
 
-( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | android update sdk --filter tools,platform-tools,build-tools-25.0.2,android-25,extra-google-m2repository --no-ui -a
+( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | android update sdk --filter tools,platform-tools-25.0.2,build-tools-25.0.2,android-25,extra-google-m2repository --no-ui -a
 ( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | android update sdk --filter extra-android-m2repository --no-ui -a
