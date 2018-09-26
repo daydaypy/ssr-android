@@ -8,8 +8,8 @@ export PATH=${ANDROID_NDK_HOME}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-t
 if [ ! -d "$ANDROID_HOME" ]; then
     mkdir -p $ANDROID_HOME
     pushd $HOME/.android
-    wget -q http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz
-    tar xf android-sdk_r24.4.1-linux.tgz
+    wget -q https://dl.google.com/android/repository/tools_r25.0.2-linux.zip
+    unzip -q tools_r25.0.2-linux.zip -d $HOME/.android/android-sdk-linux
     popd
 fi
 
@@ -21,5 +21,5 @@ if [ ! -d "$ANDROID_NDK_HOME" ]; then
     popd
 fi
 
-( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | android update sdk --filter tools,platform-tools,build-tools-24.0.0,android-23,android-24,extra-google-m2repository --no-ui -a
+( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | android update sdk --filter tools,platform-tools,build-tools-25.0.2,android-25,extra-google-m2repository --no-ui -a
 ( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | android update sdk --filter extra-android-m2repository --no-ui -a
